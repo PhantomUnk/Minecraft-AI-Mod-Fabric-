@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "chatgptmode",
+	"version": "${version}",
+	"name": "chatGPTMode",
+	"description": "This is a mode for chatGPT implemented in Minecraft.",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://github.com/PhantomUnk",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/chatgptmode/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"mark.gptmode.ChatGPTMode"
+		],
+		"client": [
+			"mark.gptmode.ChatGPTModeClient"
+		]
+	},
+	"mixins": [
+		"chatgptmode.mixins.json",
+		{
+			"config": "chatgptmode.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
